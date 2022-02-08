@@ -26,22 +26,22 @@ public class EjemplolombokApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-/*
+
 		//PATRON PROTOTYPE CLONE
-				Person p1 = new Person("Pepe",10);
-				System.out.println("Edad: "+p1.getAge()+", Nombre: "+p1.getName()+", Objeto: "+p1.hashCode());
-				//Person p2 = p1.clonar();
-				//System.out.println("Edad: "+p2.getAge()+", Nombre: "+p2.getName()+", Objeto: "+p2.hashCode());
-//				
-//				if(p1==p2) {
-//					System.out.println("Son iguales los objetos");
-//				}else {
-//					System.out.println("No son iguales los objetos");
-//				}
+		Person p1 = new Person("Pepe",10);
+		System.out.println("Edad: "+p1.getAge()+", Nombre: "+p1.getName()+", Objeto: "+p1.hashCode());
+		//Person p2 = p1.clonar();
+		//System.out.println("Edad: "+p2.getAge()+", Nombre: "+p2.getName()+", Objeto: "+p2.hashCode());
 				
-				Person pbuilder = Person.builder().age(43).name("Ale").build();
-				System.out.println(pbuilder.getAge());
-				System.out.println(pbuilder.getName());
+//		if(p1==p2) {
+//			System.out.println("Son iguales los objetos");
+//		}else {
+//			System.out.println("No son iguales los objetos");
+//		}
+				
+		Person pbuilder = Person.builder().age(43).name("Ale").build();
+		System.out.println(pbuilder.getAge());
+		System.out.println(pbuilder.getName());
 				
 		//Crea beans distintos
 		System.out.println(context.getBean("personPrototype").hashCode());
@@ -52,16 +52,13 @@ public class EjemplolombokApplication implements CommandLineRunner{
 		System.out.println(context.getBean("personSingleton").hashCode());
 		System.out.println(context.getBean("personSingleton").hashCode());
 		System.out.println(context.getBean("personSingleton").hashCode());
-*/
 		
-//		DecoratorImpl dec = new DecoratorImpl();
-//		dec.setPerson(Person.builder().name("Juan").age(10).build());
-//		System.out.println(dec.getAge());
-//		System.out.println(dec.getName());
-		
-//		Person p = new Person("Juan",10);
-//		PersonaProxy pr = new PersonaProxy(p);
-//		pr.operation();
+		DecoratorImpl dec2 = DecoratorImpl.builder().person(Person.builder().name("Pepe").age(15).build()).build();
+		System.out.println(dec2.getAge());
+		System.out.println(dec2.getName());
+		Person p = new Person("Juan",10);
+		PersonaProxy pr = new PersonaProxy(p);
+		pr.operation();
 		
 		Unidad sargento = new Unidad("Sargento");
 		Unidad soldado = new Unidad("Soldado");
